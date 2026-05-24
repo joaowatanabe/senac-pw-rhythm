@@ -51,16 +51,24 @@ export default function Home() {
   }
 
   return (
-    <div className="container py-8">
-      <div className="mb-6">
-        <h1 className="font-(--font-display) text-2xl text-text">Músicas</h1>
-        <p className="text-sm text-text-muted mt-1">
-          {musics.length} faixa{musics.length !== 1 ? "s" : ""} cadastrada
-          {musics.length !== 1 ? "s" : ""}
-        </p>
-      </div>
-
-      <div className="mb-6">
+    <div className="container pt-12 pb-10 flex flex-col gap-8">
+      <div className="flex flex-col gap-3">
+        <div className="flex items-center justify-between">
+          <span className="mt-2 text-xs font-semibold uppercase tracking-widest text-[var(--color-text-faint)]">
+            {filtered.length} faixa{filtered.length !== 1 ? "s" : ""}
+            {selectedGenre !== "Todos"
+              ? ` em ${selectedGenre}`
+              : " no catálogo"}
+          </span>
+          {selectedGenre !== "Todos" && (
+            <button
+              onClick={() => setSelectedGenre("Todos")}
+              className="text-xs text-[var(--color-primary)] hover:underline cursor-pointer"
+            >
+              Limpar filtro
+            </button>
+          )}
+        </div>
         <GenreFilter
           genres={genres}
           selected={selectedGenre}
@@ -70,12 +78,12 @@ export default function Home() {
 
       {filtered.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-20 gap-3">
-          <p className="text-text-faint text-sm">
+          <p className="text-[var(--color-text-faint)] text-sm">
             Nenhuma música encontrada para esse gênero.
           </p>
           <button
             onClick={() => setSelectedGenre("Todos")}
-            className="text-sm text-primary hover:underline cursor-pointer"
+            className="text-sm text-[var(--color-primary)] hover:underline cursor-pointer"
           >
             Limpar filtro
           </button>

@@ -6,22 +6,24 @@
   --font-display: "Outfit", sans-serif;
   --font-body: "Inter", sans-serif;
 
-  --color-bg: #0a0a0f;
-  --color-surface: #111118;
-  --color-surface-2: #18181f;
-  --color-surface-3: #1f1f28;
+  --color-bg: #0a0a0a;
+  --color-surface: #121212;
+  --color-surface-2: #1a1a1a;
+  --color-surface-3: #242424;
+  --color-surface-4: #2a2a2a;
 
-  --color-text: #e8e8f0;
-  --color-text-muted: #8888a0;
-  --color-text-faint: #44445a;
+  --color-text: #ffffff;
+  --color-text-muted: #a7a7a7;
+  --color-text-faint: #535353;
 
-  --color-primary: #00d4ff;
-  --color-primary-hover: #00b8e0;
+  --color-primary: #05dc78;
+  --color-primary-hover: #04c46b;
 
   --color-purple: #9b6dff;
+  --color-cyan: #00d4ff;
 
-  --color-success: #22c55e;
-  --color-error: #f87171;
+  --color-success: #1db954;
+  --color-error: #f15e6c;
   --color-warning: #fbbf24;
 }
 

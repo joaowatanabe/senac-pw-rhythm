@@ -1,85 +1,37 @@
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/logo/logo.png";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[rgba(255,255,255,0.08)] bg-[rgba(10,10,15,0.85)] backdrop-blur-lg">
-      <div className="container flex items-center justify-between py-4">
-        <svg
-          width="36"
-          height="36"
-          viewBox="0 0 40 40"
-          fill="none"
-          aria-label="RHYTHM logo"
-        >
-          <rect
-            x="4"
-            y="20"
-            width="5"
-            height="16"
-            rx="2"
-            fill="var(--color-primary)"
-          />
-          <rect
-            x="12"
-            y="10"
-            width="5"
-            height="26"
-            rx="2"
-            fill="var(--color-primary)"
-          />
-          <rect
-            x="20"
-            y="4"
-            width="5"
-            height="32"
-            rx="2"
-            fill="var(--color-purple)"
-          />
-          <rect
-            x="28"
-            y="14"
-            width="5"
-            height="18"
-            rx="2"
-            fill="var(--color-primary)"
-          />
-        </svg>
-        <span
-          className=" text-2xl font-bold tracking-tight"
-          style={{
-            background:
-              "linear-gradient(90deg, var(--color-primary), var(--color-purple))",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-          }}
-        >
-          RHYTHM
-        </span>
-      </div>
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0a0a0a]/95 backdrop-blur-xl">
+      <div className="container relative flex items-center justify-center h-20">
+        <NavLink to="/" className="absolute left-0 flex items-center">
+          <img src={logo} alt="RHYTHM" className="h-30 w-auto" />
+        </NavLink>
 
-      <nav className="flex gap-2">
-        {[
-          { to: "/", label: "Home", end: true },
-          { to: "/inclusion", label: "Inclusão" },
-          { to: "/search", label: "Pesquisa" },
-        ].map(({ to, label, end }) => (
-          <NavLink
-            key={to}
-            to={to}
-            end={end}
-            className={({ isActive }) =>
-              `px-4 py-2 rounded-md text-sm font-medium transition-all duration-150 ${
-                isActive
-                  ? "bg-[rgba(0,212,255,0.12)] text-primary font-semibold"
-                  : "text-text-muted hover:text-text hover:bg-surface-2"
-              }`
-            }
-          >
-            {label}
-          </NavLink>
-        ))}
-      </nav>
+        <nav className="flex items-center gap-1 bg-white/[0.05] border border-white/[0.08] rounded-full px-2 py-2">
+          {[
+            { to: "/", label: "HOME", end: true },
+            { to: "/inclusion", label: "ADD" },
+            { to: "/search", label: "PESQUISA" },
+          ].map(({ to, label, end }) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={end}
+              className={({ isActive }) =>
+                `px-10 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all duration-200 ${
+                  isActive
+                    ? "bg-[var(--color-primary)] text-black"
+                    : "text-[var(--color-text-muted)] hover:text-white"
+                }`
+              }
+            >
+              {label}
+            </NavLink>
+          ))}
+        </nav>
+      </div>
     </header>
   );
 }

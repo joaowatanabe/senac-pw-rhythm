@@ -9,7 +9,7 @@
       "duration": "10:37",
       "releaseDate": "2009-09-21",
       "streamings": ["Spotify", "YouTube", "Beatport"],
-      "coverUrl": "https://upload.wikimedia.org/wikipedia/en/6/61/Deadmau5_-_For_Lack_of_a_Better_Name.png",
+      "coverUrl": "https://geo-media.beatport.com/image_size/1400x1400/8b2c0d49-7017-4b9d-bcf6-6cc8f66e6bfa.jpg",
       "ratings": [
         {
           "id": "r1",
@@ -29,7 +29,7 @@
       "duration": "3:44",
       "releaseDate": "1999-11-05",
       "streamings": ["Spotify", "YouTube"],
-      "coverUrl": "https://upload.wikimedia.org/wikipedia/en/b/b4/Darude-sandstorm.jpg",
+      "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f9ef39657ba18c612641ee6d",
       "ratings": [
         {
           "id": "r2",
@@ -56,24 +56,24 @@
       "duration": "5:20",
       "releaseDate": "2000-11-13",
       "streamings": ["Spotify", "YouTube", "SoundCloud"],
-      "coverUrl": "https://upload.wikimedia.org/wikipedia/en/0/00/Daftpunkdiscoveryfrontcover.jpg",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/pt/2/28/Daft_Punk_Discovery.jpg",
       "ratings": []
     },
     {
       "id": "4",
-      "title": "Scary Monsters and Nice Sprites",
-      "artist": "Skrillex",
-      "genre": "Dubstep",
-      "bpm": 140,
-      "duration": "3:58",
-      "releaseDate": "2010-10-22",
+      "title": "Love Songs (feat. Kosmo Kint)",
+      "artist": "Prospa, Kosmo Kint",
+      "genre": "House",
+      "bpm": 127,
+      "duration": "4:48",
+      "releaseDate": "2025-10-03",
       "streamings": ["Spotify", "Beatport", "SoundCloud"],
-      "coverUrl": "https://upload.wikimedia.org/wikipedia/en/f/f8/Scary_Monsters_and_Nice_Sprites_EP_cover.jpg",
+      "coverUrl": "https://geo-media.beatport.com/image_size/1400x1400/2b79c1db-0875-43e9-b2ce-4755353e112e.jpg",
       "ratings": [
         {
           "id": "r4",
           "user": "Pedro",
-          "comment": "Esse drop mudou o dubstep pra sempre.",
+          "comment": "Animal!",
           "score": 5,
           "createdAt": "2026-05-05T20:00:00Z"
         }
@@ -81,14 +81,14 @@
     },
     {
       "id": "5",
-      "title": "Levels",
-      "artist": "Avicii",
-      "genre": "Progressive House",
-      "bpm": 126,
-      "duration": "5:37",
-      "releaseDate": "2011-10-28",
+      "title": "Free Your Mind (Extended Mix)",
+      "artist": "Cloonee, Prospa",
+      "genre": "House",
+      "bpm": 128,
+      "duration": "5:04",
+      "releaseDate": "2026-03-27",
       "streamings": ["Spotify", "YouTube"],
-      "coverUrl": "https://upload.wikimedia.org/wikipedia/en/4/4a/Avicii_-_Levels.jpg",
+      "coverUrl": "https://geo-media.beatport.com/image_size/1400x1400/68d19d58-caeb-431c-8375-be7415f16966.jpg",
       "ratings": [
         {
           "id": "r5",
@@ -101,14 +101,14 @@
     },
     {
       "id": "6",
-      "title": "Silence",
-      "artist": "Delerium ft. Sarah McLachlan",
-      "genre": "Trance",
-      "bpm": 138,
-      "duration": "4:01",
-      "releaseDate": "1999-09-14",
+      "title": "Cúrame feat. Sam Koperberg",
+      "artist": "Marco Tropeano, Sam Koperberg",
+      "genre": "House",
+      "bpm": 131,
+      "duration": "6:50",
+      "releaseDate": "2023-05-26",
       "streamings": ["Spotify", "YouTube", "Beatport"],
-      "coverUrl": "https://upload.wikimedia.org/wikipedia/en/4/41/DeleriumSilence.jpg",
+      "coverUrl": "https://geo-media.beatport.com/image_size/500x500/a47d5e99-c44e-48e6-9f4d-0279740ad8df.jpg",
       "ratings": []
     }
   ]

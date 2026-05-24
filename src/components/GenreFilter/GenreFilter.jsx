@@ -1,17 +1,17 @@
 export default function GenreFilter({ genres, selected, onChange }) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2.5">
       {genres.map((genre) => (
         <button
           key={genre}
           type="button"
           onClick={() => onChange(genre)}
           className={`
-            px-4 py-1 rounded-full text-sm font-medium border transition-all duration-150
+            px-6 py-2.5 rounded-full text-sm font-semibold border transition-all duration-150 cursor-pointer
             ${
               selected === genre
-                ? "bg-[rgba(0,212,255,0.12)] border-primary text-primary font-semibold"
-                : "bg-surface-2 border-[rgba(255,255,255,0.08)] text-text-muted hover:border-primary hover:text-primary"
+                ? "bg-[var(--color-primary)] border-[var(--color-primary)] text-black"
+                : "bg-transparent border-white/[0.12] text-[var(--color-text-muted)] hover:border-white/30 hover:text-white"
             }
           `}
         >
