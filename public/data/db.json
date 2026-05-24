@@ -1,0 +1,115 @@
+{
+  "musics": [
+    {
+      "id": "1",
+      "title": "Strobe",
+      "artist": "deadmau5",
+      "genre": "Progressive House",
+      "bpm": 128,
+      "duration": "10:37",
+      "releaseDate": "2009-09-21",
+      "streamings": ["Spotify", "YouTube", "Beatport"],
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/en/6/61/Deadmau5_-_For_Lack_of_a_Better_Name.png",
+      "ratings": [
+        {
+          "id": "r1",
+          "user": "João",
+          "comment": "Clássico absoluto, uma obra de arte.",
+          "score": 5,
+          "createdAt": "2026-05-01T10:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Sandstorm",
+      "artist": "Darude",
+      "genre": "Trance",
+      "bpm": 136,
+      "duration": "3:44",
+      "releaseDate": "1999-11-05",
+      "streamings": ["Spotify", "YouTube"],
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/en/b/b4/Darude-sandstorm.jpg",
+      "ratings": [
+        {
+          "id": "r2",
+          "user": "Ana",
+          "comment": "Quem não conhece essa música?",
+          "score": 4,
+          "createdAt": "2026-05-02T14:00:00Z"
+        },
+        {
+          "id": "r3",
+          "user": "Carlos",
+          "comment": "Icônica demais!",
+          "score": 5,
+          "createdAt": "2026-05-03T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "One More Time",
+      "artist": "Daft Punk",
+      "genre": "French House",
+      "bpm": 123,
+      "duration": "5:20",
+      "releaseDate": "2000-11-13",
+      "streamings": ["Spotify", "YouTube", "SoundCloud"],
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/en/0/00/Daftpunkdiscoveryfrontcover.jpg",
+      "ratings": []
+    },
+    {
+      "id": "4",
+      "title": "Scary Monsters and Nice Sprites",
+      "artist": "Skrillex",
+      "genre": "Dubstep",
+      "bpm": 140,
+      "duration": "3:58",
+      "releaseDate": "2010-10-22",
+      "streamings": ["Spotify", "Beatport", "SoundCloud"],
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/en/f/f8/Scary_Monsters_and_Nice_Sprites_EP_cover.jpg",
+      "ratings": [
+        {
+          "id": "r4",
+          "user": "Pedro",
+          "comment": "Esse drop mudou o dubstep pra sempre.",
+          "score": 5,
+          "createdAt": "2026-05-05T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Levels",
+      "artist": "Avicii",
+      "genre": "Progressive House",
+      "bpm": 126,
+      "duration": "5:37",
+      "releaseDate": "2011-10-28",
+      "streamings": ["Spotify", "YouTube"],
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/en/4/4a/Avicii_-_Levels.jpg",
+      "ratings": [
+        {
+          "id": "r5",
+          "user": "Marina",
+          "comment": "Sempre que toca, todo mundo vai ao teto.",
+          "score": 5,
+          "createdAt": "2026-05-10T16:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Silence",
+      "artist": "Delerium ft. Sarah McLachlan",
+      "genre": "Trance",
+      "bpm": 138,
+      "duration": "4:01",
+      "releaseDate": "1999-09-14",
+      "streamings": ["Spotify", "YouTube", "Beatport"],
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/en/4/41/DeleriumSilence.jpg",
+      "ratings": []
+    }
+  ]
+}
