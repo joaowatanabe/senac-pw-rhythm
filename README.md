@@ -67,14 +67,14 @@ rhythm/
 
 ## 🛠️ Stack Tecnológica
 
-| Tecnologia                                      | Versão | Função                       |
-| ----------------------------------------------- | ------ | ---------------------------- |
-| [Vite](https://vitejs.dev/)                     | latest | Bundler / dev server         |
-| [React](https://react.dev/)                     | ^19    | Framework UI                 |
-| [React Router DOM](https://reactrouter.com/)    | ^7     | Navegação SPA                |
-| [React Hook Form](https://react-hook-form.com/) | ^7     | Gerenciamento de formulários |
-| JavaScript (ES2022+)                            | —      | Linguagem principal          |
-| CSS Modules / CSS puro                          | —      | Estilização                  |
+| Tecnologia | Versão | Função |
+|---|---|---|
+| [Vite](https://vitejs.dev/) | latest | Bundler / dev server |
+| [React](https://react.dev/) | ^19 | Framework UI |
+| [React Router DOM](https://reactrouter.com/) | ^7 | Navegação SPA |
+| [React Hook Form](https://react-hook-form.com/) | ^7 | Gerenciamento de formulários |
+| JavaScript (ES2022+) | — | Linguagem principal |
+| CSS Modules / CSS puro | — | Estilização |
 
 > **Sobre o banco de dados:** optamos por **`localStorage`** em vez de `json-server` para manter o projeto **100% frontend**, sem necessidade de rodar um servidor separado. Os dados do `db.json` são carregados na primeira visita e persistidos no `localStorage` do navegador — simples, didático e sem conflito com o repositório.
 
@@ -84,12 +84,12 @@ rhythm/
 
 ### Alternativas consideradas
 
-| Solução             | Prós                                                              | Contras                                                                      | Adequada?                                                                  |
-| ------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `json-server`       | Simula REST real                                                  | Precisa de processo separado (`npm run server`), porta extra, dois terminais | ⚠️ Funciona, porém adiciona complexidade desnecessária para fins didáticos |
-| `localStorage`      | Zero dependências extras, 100% client-side, sem servidor separado | Dados ficam no navegador (não compartilhados entre usuários/máquinas)        | ✅ **Escolhido**                                                           |
-| `IndexedDB`         | Mais robusto que localStorage, suporta blobs                      | API mais complexa, overkill para o escopo                                    | ❌ Fora do escopo                                                          |
-| Firebase / Supabase | Banco real na nuvem, dados persistidos                            | Requer conta, setup, variáveis de ambiente                                   | ❌ Fora do escopo desta UC                                                 |
+| Solução | Prós | Contras | Adequada? |
+|---|---|---|---|
+| `json-server` | Simula REST real | Precisa de processo separado (`npm run server`), porta extra, dois terminais | ⚠️ Funciona, porém adiciona complexidade desnecessária para fins didáticos |
+| `localStorage` | Zero dependências extras, 100% client-side, sem servidor separado | Dados ficam no navegador (não compartilhados entre usuários/máquinas) | ✅ **Escolhido** |
+| `IndexedDB` | Mais robusto que localStorage, suporta blobs | API mais complexa, overkill para o escopo | ❌ Fora do escopo |
+| Firebase / Supabase | Banco real na nuvem, dados persistidos | Requer conta, setup, variáveis de ambiente | ❌ Fora do escopo desta UC |
 
 ### Como funciona na prática
 
@@ -153,7 +153,6 @@ pnpm add react-hook-form
 ## 🎵 Funcionalidades
 
 ### Home (`/`)
-
 - Listagem de todas as músicas cadastradas em cards
 - Filtro por gênero (House, Techno, Trance, Drum & Bass, etc.)
 - Cada card exibe:
@@ -170,27 +169,24 @@ pnpm add react-hook-form
   - Botão **Ver Comentários** → lista de avaliações
 
 ### Inclusão (`/inclusion`)
-
 - Formulário completo validado com React Hook Form
 - Campos:
-  - Nome da música _(obrigatório)_
-  - Artista(s) _(obrigatório)_
-  - Gênero _(select — obrigatório)_
-  - BPM _(número — obrigatório)_
-  - Duração _(formato mm:ss — obrigatório)_
-  - Data de lançamento _(obrigatório)_
-  - Streamings disponíveis _(checkboxes: Spotify, Beatport, SoundCloud, YouTube, etc.)_
-  - URL da capa _(opcional — usa placeholder se vazio)_
+  - Nome da música *(obrigatório)*
+  - Artista(s) *(obrigatório)*
+  - Gênero *(select — obrigatório)*
+  - BPM *(número — obrigatório)*
+  - Duração *(formato mm:ss — obrigatório)*
+  - Data de lançamento *(obrigatório)*
+  - Streamings disponíveis *(checkboxes: Spotify, Beatport, SoundCloud, YouTube, etc.)*
+  - URL da capa *(opcional — usa placeholder se vazio)*
 - Salva no localStorage via `useMusic`
 
 ### Pesquisa (`/search`)
-
 - Input de busca livre
 - Filtra por nome da música **ou** gênero em tempo real
 - Exibe os cards filtrados no mesmo formato da Home
 
 ### Modal de Comentário
-
 - Campos: Nome do usuário, Comentário, Nota (1–5 estrelas — clicável)
 - Validação com React Hook Form
 - Salva a avaliação associada à música
@@ -232,11 +228,9 @@ pnpm add react-hook-form
 ## 🧩 Componentes Principais
 
 ### `<MusicCard />`
-
 Recebe um objeto `music` e renderiza o card completo com avaliações e botões de ação.
 
 **Props:**
-
 ```js
 {
   music: {
@@ -250,11 +244,9 @@ Recebe um objeto `music` e renderiza o card completo com avaliações e botões 
 ```
 
 ### `<CommentModal />`
-
 Modal controlado por estado. Exibe formulário de avaliação e fecha ao confirmar.
 
 **Props:**
-
 ```js
 {
   isOpen: boolean,
@@ -265,11 +257,9 @@ Modal controlado por estado. Exibe formulário de avaliação e fecha ao confirm
 ```
 
 ### `<StarRating />`
-
 Componente de exibição e/ou seleção de estrelas.
 
 **Props:**
-
 ```js
 {
   value: number,        // 0–5
@@ -279,11 +269,9 @@ Componente de exibição e/ou seleção de estrelas.
 ```
 
 ### `<GenreFilter />`
-
 Lista de botões/chips de gênero. Filtra os cards na Home.
 
 **Props:**
-
 ```js
 {
   genres: string[],
@@ -300,13 +288,13 @@ Hook centralizado para todas as operações de dados.
 
 ```js
 const {
-  musics, // array de músicas
-  addMusic, // (musicData) => void
-  addRating, // (musicId, ratingData) => void
-  searchMusics, // (query) => music[]
-  filterByGenre, // (genre) => music[]
-  getGenres, // () => string[]
-} = useMusic();
+  musics,          // array de músicas
+  addMusic,        // (musicData) => void
+  addRating,       // (musicId, ratingData) => void
+  searchMusics,    // (query) => music[]
+  filterByGenre,   // (genre) => music[]
+  getGenres,       // () => string[]
+} = useMusic()
 ```
 
 ---
@@ -347,20 +335,20 @@ main          # Branch principal — código estável
 
 ## 📌 Status do Projeto
 
-| Etapa                                  | Status    |
-| -------------------------------------- | --------- |
+| Etapa | Status |
+|---|---|
 | Setup do projeto (Vite + dependências) | [x] Feito |
-| Estrutura de pastas e roteamento       | [x] Feito |
+| Estrutura de pastas e roteamento | [x] Feito |
 | Hook `useMusic` + seed do localStorage | [x] Feito |
-| Componente `MusicCard`                 | [x] Feito |
-| Componente `StarRating`                | [x] Feito |
-| Componente `CommentModal`              | [x] Feito |
-| Componente `GenreFilter`               | [x] Feito |
-| Página Home                            | [x] Feito |
-| Página Inclusão                        | [x] Feito |
-| Página Pesquisa                        | [x] Feito |
-| Responsividade                         | [x] Feito |
-| Polimento visual                       | [x] Feito |
+| Componente `MusicCard` | [x] Feito |
+| Componente `StarRating` | [x] Feito |
+| Componente `CommentModal` | [x] Feito |
+| Componente `GenreFilter` | [x] Feito |
+| Página Home | [x] Feito |
+| Página Inclusão | [x] Feito |
+| Página Pesquisa | [x] Feito |
+| Responsividade | [x] Feito|
+| Polimento visual | ⬜ Pendente |
 
 ---
 
