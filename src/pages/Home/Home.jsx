@@ -51,10 +51,10 @@ export default function Home() {
   }
 
   return (
-    <div className="container pt-12 pb-10 flex flex-col gap-8">
-      <div className="flex flex-col gap-3">
+    <div className="container pt-14 pb-10 flex flex-col gap-8">
+      <div className="flex flex-col gap-5">
         <div className="flex items-center justify-between">
-          <span className="mt-2 text-xs font-semibold uppercase tracking-widest text-[var(--color-text-faint)]">
+          <span className="mt-4 text-sm font-semibold uppercase tracking-widest text-[var(--color-text-faint)]">
             {filtered.length} faixa{filtered.length !== 1 ? "s" : ""}
             {selectedGenre !== "Todos"
               ? ` em ${selectedGenre}`

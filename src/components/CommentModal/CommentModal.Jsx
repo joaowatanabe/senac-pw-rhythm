@@ -49,8 +49,10 @@ export default function CommentModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
-      onClick={handleClose}
+      className="w-full max-w-lg bg-zinc-900 border border-white/10 rounded-3xl shadow-2xl overflow-hidden animate-[modalIn_200ms_cubic-bezier(0.16,1,0.3,1)]"
+      onClick={(e) => e.stopPropagation()}
+      role="dialog"
+      aria-modal="true"
     >
       <div
         className="w-full max-w-md bg-surface-2 border border-[rgba(255,255,255,0.08)] rounded-2xl shadow-2xl animate-[modalIn_200ms_cubic-bezier(0.16,1,0.3,1)]"
@@ -58,65 +60,54 @@ export default function CommentModal({
         role="dialog"
         aria-modal="true"
       >
-        {/* Header */}
-        <div className="flex justify-between items-start p-5 pb-0">
+        <div className="flex justify-between items-center p-6 border-b border-white/5 bg-zinc-800/30">
           <div>
-            <h2 className="font-(--font-display) text-lg text-text">
+            <h2 className="text-xl font-bold text-white">
               {mode === "comment" ? "Avaliar música" : "Comentários"}
             </h2>
-            <p className="text-sm text-text-muted mt-0.5">
+            <p className="text-sm text-zinc-400 mt-1">
               {music.title} — {music.artist}
             </p>
           </div>
           <button
             onClick={handleClose}
             aria-label="Fechar modal"
-            className="text-text-muted hover:text-text p-1 rounded transition-colors cursor-pointer"
+            className="text-zinc-500 hover:text-white bg-white/5 hover:bg-white/10 p-2 rounded-full transition-all cursor-pointer"
           >
             <X size={20} />
           </button>
         </div>
 
-        {/* Body */}
-        <div className="p-5">
+        <div className="p-6 md:p-8">
           {mode === "comment" ? (
             <form
               onSubmit={handleSubmit(onFormSubmit)}
-              className="flex flex-col gap-4"
+              className="flex flex-col gap-6"
             >
-              <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-medium text-text-muted">
+              {/* Inputs Redesenhados */}
+              <div className="flex flex-col gap-2">
+                <label className="text-sm font-semibold text-zinc-300">
                   Seu nome
                 </label>
                 <input
                   placeholder="Ex: João Silva"
-                  className={`w-full bg-surface-3 border rounded-lg px-4 py-2.5 text-base text-text outline-none transition-colors focus:border-primary ${errors.user ? "border-error" : "border-[rgba(255,255,255,0.08)]"}`}
+                  className={`w-full bg-zinc-950/50 border rounded-xl px-4 py-3.5 text-base text-white outline-none transition-colors focus:border-green-500 ${errors.user ? "border-red-500" : "border-white/10"}`}
                   {...register("user", { required: "Nome é obrigatório" })}
                 />
-                {errors.user && (
-                  <span className="text-xs text-error">
-                    {errors.user.message}
-                  </span>
-                )}
               </div>
 
-              <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-medium text-text-muted">
+              <div className="flex flex-col gap-2">
+                <label className="text-sm font-semibold text-zinc-300">
                   Comentário
                 </label>
                 <textarea
-                  rows={3}
+                  rows={4}
                   placeholder="O que você achou dessa faixa?"
-                  className={`w-full bg-surface-3 border rounded-lg px-4 py-2.5 text-base text-text outline-none transition-colors focus:border-primary resize-y min-h-20 ${errors.comment ? "border-error" : "border-[rgba(255,255,255,0.08)]"}`}
+                  className={`w-full bg-zinc-950/50 border rounded-xl px-4 py-3.5 text-base text-white outline-none transition-colors focus:border-green-500 resize-none ${errors.comment ? "border-red-500" : "border-white/10"}`}
                   {...register("comment", {
                     required: "Comentário é obrigatório",
                   })}
                 />
-                {errors.comment && (
-                  <span className="text-xs text-error">
-                    {errors.comment.message}
-                  </span>
-                )}
               </div>
 
               <div className="flex flex-col gap-1.5">

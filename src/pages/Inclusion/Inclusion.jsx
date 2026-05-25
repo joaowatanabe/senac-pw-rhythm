@@ -69,14 +69,14 @@ export default function Inclusion() {
   }
 
   const inputClass = (hasError) =>
-    `w-full bg-[var(--color-surface-2)] border rounded-xl px-4 py-3 text-sm text-white placeholder:text-[var(--color-text-faint)] outline-none transition-colors focus:border-[var(--color-primary)] ${
+    `w-full bg-[var(--color-surface-2)] border rounded-xl px-4 py-4.5 text-sm text-white placeholder:text-[var(--color-text-faint)] outline-none transition-colors focus:border-[var(--color-primary)] ${
       hasError ? "border-[var(--color-error)]" : "border-white/[0.08]"
     }`;
 
   return (
-    <div className="container py-10">
+    <div className="w-full max-w-4xl mx-auto px-6 pt-20 pb-16 flex flex-col gap-6">
       <div className="mb-8 max-w-2xl mx-auto">
-        <h1 className="font-[var(--font-display)] text-2xl font-bold text-[var(--color-text)]">
+        <h1 className="font-[var(--font-display)] text-2xl text-center font-bold text-[var(--color-text)]">
           Incluir Música
         </h1>
         <p className="text-sm text-[var(--color-text-muted)] mt-1">
@@ -95,7 +95,7 @@ export default function Inclusion() {
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-[var(--color-surface)] border border-white/[0.06] rounded-2xl p-8 flex flex-col gap-6 max-w-2xl mx-auto"
+        className="bg-zinc-900 border border-white/10 rounded-3xl p-6 sm:p-12 flex flex-col gap-8 w-full shadow-2xl"
       >
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <div className="flex flex-col gap-1.5">
@@ -156,7 +156,6 @@ export default function Inclusion() {
           )}
         </div>
 
-        {/* BPM + Duração + Data */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
           <div className="flex flex-col gap-1.5">
             <label className="text-sm font-medium text-[var(--color-text-muted)]">
@@ -260,17 +259,17 @@ export default function Inclusion() {
           </div>
         </div>
 
-        <div className="flex justify-end gap-3 pt-2 border-t border-[rgba(255,255,255,0.05)]">
+        <div className="flex justify-end gap-4 pt-5 border-t border-white/[0.05]">
           <button
             type="button"
             onClick={() => navigate("/")}
-            className="px-5 py-2.5 rounded-lg text-sm font-medium text-[var(--color-text-muted)] border border-[rgba(255,255,255,0.08)] hover:border-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-all cursor-pointer"
+            className="px-8 py-3 rounded-full text-sm font-semibold text-[var(--color-text-muted)] border border-white/[0.10] hover:border-white/25 hover:text-white transition-all cursor-pointer"
           >
             Cancelar
           </button>
           <button
             type="submit"
-            className="px-5 py-2.5 rounded-lg text-sm font-medium bg-[rgba(0,212,255,0.12)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-bg)] transition-all cursor-pointer"
+            className="px-8 py-3 rounded-full text-sm font-bold bg-[var(--color-primary)] text-black hover:bg-[var(--color-primary-hover)] transition-all cursor-pointer"
           >
             Salvar música
           </button>

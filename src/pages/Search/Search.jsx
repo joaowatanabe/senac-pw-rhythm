@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Search as SearchIcon } from "lucide-react";
 import { useMusic } from "../../hooks/useMusic";
 import MusicCard from "../../components/MusicCard/MusicCard";
 import CommentModal from "../../components/CommentModal/CommentModal";
@@ -34,67 +33,60 @@ export default function Search() {
   }
 
   return (
-    <div className="container py-10">
-     
-      <div className="mb-6">
-        <h1 className="font-(--font-display) text-2xl text-text">
-          Pesquisa
-        </h1>
-        <p className="text-sm text-text-muted mt-1">
-          Busque por nome, artista ou gênero
-        </p>
-      </div>
-
-      
-      <div className="relative mb-8">
-        <SearchIcon
-          size={18}
-          className="absolute left-4 top-1/2 -translate-y-1/2 text-text-faint pointer-events-none"
-        />
+    <div className="flex flex-col items-center w-full max-w-6xl mx-auto px-4 py-8 gap-8">
+      <h1 className="text-3xl font-bold text-white text-center">Pesquisar</h1>
+      <div className="relative w-full max-w-2xl">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Ex: Strobe, Daft Punk, Techno..."
-          className="w-full bg-[var(--color-surface)] border border-[rgba(255,255,255,0.08)] rounded-xl pl-11 pr-4 py-3 text-base text-[var(--color-text)] placeholder:text-[var(--color-text-faint)] outline-none transition-colors focus:border-[var(--color-primary)]"
+          className="w-full h-14 pl-14 pr-6 rounded-full border border-gray-700 bg-zinc-900 text-base text-white placeholder-gray-500 outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all shadow-md"
         />
       </div>
 
-      {!query.trim() ? (
-        <div className="flex items-center justify-center py-20">
-          <p className="text-sm text-[var(--color-text-faint)]">
-            Digite algo para começar a busca
-          </p>
-        </div>
-      ) : loading ? (
-        <p className="text-sm text-[var(--color-text-muted)] animate-pulse">
-          Carregando...
-        </p>
-      ) : results.length === 0 ? (
-        <div className="flex items-center justify-center py-20">
-          <p className="text-sm text-[var(--color-text-faint)]">
-            Nenhum resultado para{" "}
-            <span className="text-[var(--color-text-muted)]">"{query}"</span>
-          </p>
-        </div>
-      ) : (
-        <>
-          <p className="text-xs text-[var(--color-text-faint)] mb-4">
-            {results.length} resultado{results.length !== 1 ? "s" : ""}{" "}
-            encontrado{results.length !== 1 ? "s" : ""}
-          </p>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {results.map((music) => (
-              <MusicCard
-                key={music.id}
-                music={music}
-                onComment={handleComment}
-                onViewComments={handleViewComments}
-              />
-            ))}
+      <div className="w-full max-w-5xl">
+        {!query.trim() ? (
+          <div className="flex flex-col items-center justify-center py-10">
+            <p className="text-zinc-400 text-sm">
+              Digite algo para começar a busca...
+            </p>
           </div>
-        </>
-      )}
+        ) : loading ? (
+          <div className="flex flex-col items-center justify-center py-16 gap-2">
+            <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+            <p className="text-zinc-400 animate-pulse">Buscando...</p>
+          </div>
+        ) : results.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-16 gap-2">
+            <p className="text-zinc-400 text-lg text-center">
+              Nenhum resultado encontrado para <br />
+              <span className="text-white font-medium">"{query}"</span>
+            </p>
+          </div>
+        ) : (
+          <div className="w-full flex flex-col gap-6">
+            <div className="flex items-center justify-between border-b border-zinc-800 pb-3">
+              <h2 className="text-xl font-semibold text-white">Resultados</h2>
+              <span className="text-sm font-medium text-zinc-400 bg-zinc-800 px-3 py-1 rounded-full">
+                {results.length}{" "}
+                {results.length === 1 ? "encontrado" : "encontrados"}
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {results.map((music) => (
+                <MusicCard
+                  key={music.id}
+                  music={music}
+                  onComment={handleComment}
+                  onViewComments={handleViewComments}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
 
       <CommentModal
         isOpen={modal.open}
