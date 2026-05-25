@@ -9,7 +9,7 @@ export default function Header() {
           <img src={logo} alt="RHYTHM" className="h-24 w-auto" />
         </NavLink>
 
-        <nav className="flex items-center gap-1 bg-zinc-800/60 border border-white/[0.12] rounded-full px-1.5 py-1 shadow-lg">
+        <nav className="flex items-center h-10 gap-4 bg-zinc-800/60 border border-white/[0.12] rounded-3xl px-1.5 py-1 shadow-lg">
           {[
             { to: "/", label: "HOME", end: true },
             { to: "/inclusion", label: "ADD" },
@@ -20,9 +20,9 @@ export default function Header() {
               to={to}
               end={end}
               className={({ isActive }) =>
-                `px-5 py-1.5 rounded-full text-xs font-bold tracking-widest transition-all duration-200 ${
+                `px-5 py-1.5 rounded-full text-sm font-bold tracking-widest transition-all duration-200 ${
                   isActive
-                    ? "bg-[var(--color-primary)] text-black shadow-[0_0_10px_rgba(5,220,120,0.4)]"
+                    ? "bg-[var(--color-primary)] text-black shadow-[0_0_10px_rgba(5,220,120,0.4)] h-10 text-center items-center flex"
                     : "text-zinc-400 hover:text-white hover:bg-white/8"
                 }`
               }
