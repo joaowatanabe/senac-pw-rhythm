@@ -33,19 +33,25 @@ export default function Search() {
   }
 
   return (
-    <div className="flex flex-col items-center w-full max-w-6xl mx-auto px-4 py-8 gap-8">
-      <h1 className="text-3xl font-bold text-white text-center">Pesquisar</h1>
-      <div className="relative w-full max-w-2xl">
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Ex: Strobe, Daft Punk, Techno..."
-          className="w-full h-14 pl-14 pr-6 rounded-full border border-gray-700 bg-zinc-900 text-base text-white placeholder-gray-500 outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all shadow-md"
-        />
+    <div className="container pt-14 pb-16 flex flex-col gap-8">
+      <div>
+        <h1 className="font-[var(--font-display)] text-2xl font-bold text-[var(--color-text)]">
+          Pesquisar
+        </h1>
+        <p className="text-sm text-[var(--color-text-muted)] mt-1">
+          Busque por título, artista ou gênero
+        </p>
       </div>
 
-      <div className="w-full max-w-5xl">
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Ex: Strobe, Daft Punk, Techno..."
+        className="w-full max-w-xl h-12 px-5 rounded-full border border-white/10 bg-zinc-900 text-base text-white placeholder-zinc-500 outline-none focus:border-green-500 transition-all"
+      />
+
+      <div className="w-full">
         {!query.trim() ? (
           <div className="flex flex-col items-center justify-center py-10">
             <p className="text-zinc-400 text-sm">

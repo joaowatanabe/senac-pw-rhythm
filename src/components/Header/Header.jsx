@@ -3,13 +3,13 @@ import logo from "../../assets/logo/logo.png";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0a0a0a]/95 backdrop-blur-xl h-20">
-      <div className="container relative flex items-center justify-center h-20">
+    <header className="sticky top-0 z-50 border-b border-white/[0.08] bg-[#0a0a0a]/95 backdrop-blur-xl">
+      <div className="container relative flex items-center justify-center h-16">
         <NavLink to="/" className="absolute left-0 flex items-center">
-          <img src={logo} alt="RHYTHM" className="h-30 w-auto" />
+          <img src={logo} alt="RHYTHM" className="h-24 w-auto" />
         </NavLink>
 
-        <nav className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 bg-zinc-900/80 border border-white/10 rounded-full p-14 shadow-lg">
+        <nav className="flex items-center gap-1 bg-zinc-800/60 border border-white/[0.12] rounded-full px-1.5 py-1 shadow-lg">
           {[
             { to: "/", label: "HOME", end: true },
             { to: "/inclusion", label: "ADD" },
@@ -20,10 +20,10 @@ export default function Header() {
               to={to}
               end={end}
               className={({ isActive }) =>
-                `px-10 py-10 rounded-full text-base font-bold tracking-wide transition-all duration-300 ${
+                `px-5 py-1.5 rounded-full text-xs font-bold tracking-widest transition-all duration-200 ${
                   isActive
-                    ? "bg-green-500 text-black shadow-md"
-                    : "text-zinc-400 hover:text-white hover:bg-white/5"
+                    ? "bg-[var(--color-primary)] text-black shadow-[0_0_10px_rgba(5,220,120,0.4)]"
+                    : "text-zinc-400 hover:text-white hover:bg-white/8"
                 }`
               }
             >

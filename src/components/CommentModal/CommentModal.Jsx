@@ -49,13 +49,11 @@ export default function CommentModal({
 
   return (
     <div
-      className="w-full max-w-lg bg-zinc-900 border border-white/10 rounded-3xl shadow-2xl overflow-hidden animate-[modalIn_200ms_cubic-bezier(0.16,1,0.3,1)]"
-      onClick={(e) => e.stopPropagation()}
-      role="dialog"
-      aria-modal="true"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+      onClick={handleClose}
     >
       <div
-        className="w-full max-w-md bg-surface-2 border border-[rgba(255,255,255,0.08)] rounded-2xl shadow-2xl animate-[modalIn_200ms_cubic-bezier(0.16,1,0.3,1)]"
+        className="w-full max-w-md bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl animate-[modalIn_200ms_cubic-bezier(0.16,1,0.3,1)]"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"

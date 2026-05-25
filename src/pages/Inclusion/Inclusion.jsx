@@ -74,9 +74,9 @@ export default function Inclusion() {
     }`;
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-6 pt-20 pb-16 flex flex-col gap-6">
-      <div className="mb-8 max-w-2xl mx-auto">
-        <h1 className="font-[var(--font-display)] text-2xl text-center font-bold text-[var(--color-text)]">
+    <div className="container pt-14 pb-16 flex flex-col gap-8 max-w-2xl">
+      <div>
+        <h1 className="font-[var(--font-display)] text-2xl font-bold text-[var(--color-text)]">
           Incluir Música
         </h1>
         <p className="text-sm text-[var(--color-text-muted)] mt-1">
@@ -85,7 +85,7 @@ export default function Inclusion() {
       </div>
 
       {success && (
-        <div className="flex items-center gap-3 p-4 max-w-2xl mx-auto mb-6 rounded-xl bg-[rgba(34,197,94,0.1)] border border-[var(--color-success)] text-[var(--color-success)]">
+        <div className="flex items-center gap-3 p-4 rounded-xl bg-[rgba(34,197,94,0.1)] border border-[var(--color-success)] text-[var(--color-success)]">
           <CheckCircle size={18} />
           <span className="text-sm font-medium">
             Música adicionada! Redirecionando...
@@ -95,7 +95,7 @@ export default function Inclusion() {
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-zinc-900 border border-white/10 rounded-3xl p-6 sm:p-12 flex flex-col gap-8 w-full shadow-2xl"
+        className="bg-zinc-900 border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col gap-8 w-full shadow-2xl"
       >
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <div className="flex flex-col gap-1.5">

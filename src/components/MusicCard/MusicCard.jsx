@@ -21,8 +21,8 @@ export default function MusicCard({ music, onComment, onViewComments }) {
   const total = music.ratings.length;
 
   return (
-    <article className="flex gap-4 p-4 bg-[var(--color-surface-2)] border border-white/[0.06] rounded-2xl transition-all duration-200 hover:bg-[var(--color-surface-3)] hover:border-white/[0.10] cursor-default">
-      <div className="shrink-0 w-36 h-36 rounded-xl overflow-hidden bg-[var(--color-surface-3)] flex items-center justify-center shadow-xl">
+    <article className="flex gap-3 p-3 sm:gap-4 sm:p-4 bg-[var(--color-surface-2)] border border-white/[0.06] rounded-2xl transition-all duration-200 hover:bg-[var(--color-surface-3)] hover:border-white/[0.10] cursor-default">
+      <div className="shrink-0 w-24 h-24 sm:w-36 sm:h-36 rounded-xl overflow-hidden bg-[var(--color-surface-3)] flex items-center justify-center shadow-xl">
         {music.coverUrl ? (
           <img
             src={music.coverUrl}
