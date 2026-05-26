@@ -1,30 +1,30 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
 
+const NAV_ITEMS = [
+  { to: "/", label: "Início", end: true },
+  { to: "/inclusion", label: "Adicionar música" },
+  { to: "/search", label: "Minhas músicas" },
+];
+
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/[0.08] bg-[#0a0a0a]/95 backdrop-blur-xl">
-      <div className="container relative flex items-center justify-center h-16">
-        <NavLink to="/" className="absolute left-0 flex items-center">
+    <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#0a0a0a]">
+      <div className="container flex items-center justify-between h-16">
+        <NavLink to="/" className="flex items-center">
           <img src={logo} alt="RHYTHM" className="h-24 w-auto" />
         </NavLink>
 
-        <nav className="flex items-center h-10 gap-4 bg-zinc-800/60 border border-white/[0.12] rounded-3xl px-1.5 py-1 shadow-lg">
-          {[
-            { to: "/", label: "HOME", end: true },
-            { to: "/inclusion", label: "ADD" },
-            { to: "/search", label: "PESQUISA" },
-          ].map(({ to, label, end }) => (
+        <nav className="flex items-center gap-4">
+          {NAV_ITEMS.map(({ to, label, end }) => (
             <NavLink
               key={to}
               to={to}
               end={end}
               className={({ isActive }) =>
-                `px-5 py-1.5 rounded-full text-sm font-bold tracking-widest transition-all duration-200 ${
-                  isActive
-                    ? "bg-[var(--color-primary)] text-black shadow-[0_0_10px_rgba(5,220,120,0.4)] h-10 text-center items-center flex"
-                    : "text-zinc-400 hover:text-white hover:bg-white/8"
-                }`
+                isActive
+                  ? "relative px-4 py-5 text-[13px] font-medium tracking-wide text-white after:absolute after:bottom-0 after:left-4 after:right-4 after:h-[2px] after:rounded-t after:bg-[#05dc78]"
+                  : "relative px-4 py-5 text-[13px] font-medium tracking-wide text-zinc-500 hover:text-zinc-200 transition-colors duration-150"
               }
             >
               {label}

@@ -4,6 +4,7 @@ import { extractGenres } from "../../utils/helpers";
 import MusicCard from "../../components/MusicCard/MusicCard";
 import GenreFilter from "../../components/GenreFilter/GenreFilter";
 import CommentModal from "../../components/CommentModal/CommentModal";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 export default function Home() {
   const { musics, loading, addRating } = useMusic();
@@ -14,12 +15,25 @@ export default function Home() {
     musicId: null,
   });
 
+  const [query, setQuery] = useState("");
+
   const genres = extractGenres(musics);
 
-  const filtered =
+  const genreFiltered =
     selectedGenre === "Todos"
       ? musics
       : musics.filter((m) => m.genre === selectedGenre);
+
+  const normalizedQuery = query.toLowerCase().trim();
+
+  const filtered = !normalizedQuery
+    ? genreFiltered
+    : genreFiltered.filter(
+        (m) =>
+          m.title.toLowerCase().includes(normalizedQuery) ||
+          m.artist.toLowerCase().includes(normalizedQuery) ||
+          m.genre.toLowerCase().includes(normalizedQuery),
+      );
 
   const selectedMusic = musics.find((m) => m.id === modal.musicId) || null;
 
@@ -51,30 +65,32 @@ export default function Home() {
   }
 
   return (
-    <div className="container pt-14 pb-10 flex flex-col gap-8">
-      <div className="flex flex-col gap-5">
-        <div className="flex items-center justify-between">
-          <span className="mt-4 text-sm font-semibold uppercase tracking-widest text-[var(--color-text-faint)]">
-            {filtered.length} faixa{filtered.length !== 1 ? "s" : ""}
-            {selectedGenre !== "Todos"
-              ? ` em ${selectedGenre}`
-              : " no catálogo"}
-          </span>
-          {selectedGenre !== "Todos" && (
-            <button
-              onClick={() => setSelectedGenre("Todos")}
-              className="text-xs text-[var(--color-primary)] hover:underline cursor-pointer"
-            >
-              Limpar filtro
-            </button>
-          )}
+    <div className="container pt-20 pb-10 flex flex-col gap-8">
+      <header className="flex flex-col gap-1">
+        <h1 className="font-[var(--font-display)] text-2xl font-bold text-[var(--color-text)]">
+          Catálogo de músicas
+        </h1>
+        <p className="text-sm text-[var(--color-text-muted)]">
+          Explore, filtre por gênero e avalie as faixas da coleção.
+        </p>
+      </header>
+      <section className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div className="md:flex-1">
+          <GenreFilter
+            genres={genres}
+            selected={selectedGenre}
+            onChange={setSelectedGenre}
+          />
         </div>
-        <GenreFilter
-          genres={genres}
-          selected={selectedGenre}
-          onChange={setSelectedGenre}
-        />
-      </div>
+
+        <div className="mt-2 md:mt-0 md:flex-1 flex justify-end">
+          <SearchBar
+            value={query}
+            onChange={setQuery}
+            placeholder="Buscar por título, artista ou gênero..."
+          />
+        </div>
+      </section>
 
       {filtered.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-20 gap-3">
@@ -83,7 +99,7 @@ export default function Home() {
           </p>
           <button
             onClick={() => setSelectedGenre("Todos")}
-            className="text-sm text-[var(--color-primary)] hover:underline cursor-pointer"
+            className="text-sm text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] transition-colors"
           >
             Limpar filtro
           </button>
