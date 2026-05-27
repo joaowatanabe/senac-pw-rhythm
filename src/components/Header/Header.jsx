@@ -4,7 +4,7 @@ import logo from "../../assets/logo/logo.png";
 const NAV_ITEMS = [
   { to: "/", label: "Início", end: true },
   { to: "/inclusion", label: "Adicionar música" },
-  { to: "/search", label: "Minhas músicas" },
+  { to: "/my-songs", label: "Minhas músicas" },
 ];
 
 export default function Header() {

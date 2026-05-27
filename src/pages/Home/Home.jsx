@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useMusic } from "../../hooks/useMusic";
 import { extractGenres } from "../../utils/helpers";
+import { useMySongs } from "../../hooks/useMySongs";
 import MusicCard from "../../components/MusicCard/MusicCard";
 import GenreFilter from "../../components/GenreFilter/GenreFilter";
 import CommentModal from "../../components/CommentModal/CommentModal";
@@ -14,6 +15,8 @@ export default function Home() {
     mode: "comment",
     musicId: null,
   });
+
+  const { addSong, removeSong, isSaved } = useMySongs();
 
   const [query, setQuery] = useState("");
 
@@ -112,6 +115,10 @@ export default function Home() {
               music={music}
               onComment={handleComment}
               onViewComments={handleViewComments}
+              onToggleMySong={() =>
+                isSaved(music.id) ? removeSong(music.id) : addSong(music)
+              }
+              isSaved={isSaved(music.id)}
             />
           ))}
         </div>

@@ -27,12 +27,6 @@
   --color-warning: #fbbf24;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg);
