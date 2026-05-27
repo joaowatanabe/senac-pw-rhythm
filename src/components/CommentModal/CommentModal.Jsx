@@ -82,7 +82,6 @@ export default function CommentModal({
               onSubmit={handleSubmit(onFormSubmit)}
               className="flex flex-col gap-6"
             >
-              {/* Inputs Redesenhados */}
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-semibold text-zinc-300">
                   Seu nome
